@@ -47,7 +47,7 @@ cacheSolve <- function(x, ...)
   }
   data <- x$get()
 
-  #solve(A) provides inverse of matrix A
+  ## solve(A) provides inverse of matrix A
   m <- solve (data) 
  
 
