@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The below two functions are example of caching the data for computations which take
+## a lot of time and processing.
 
-## Write a short comment describing this function
+## makeCacheMatrix function gets and sets the matrix and its inverse
 
 makeCacheMatrix <- function (x = matrix())
 {
@@ -34,7 +34,8 @@ makeCacheMatrix <- function (x = matrix())
 
 
 
-## Write a short comment describing this function
+## function cacheSolve either gets the cached data of matrix inverse, if already present
+## else calculates its inverse and sets it, using the function makeCacheMatrix 
 
 cacheSolve <- function(x, ...) 
 {
@@ -45,8 +46,10 @@ cacheSolve <- function(x, ...)
     return(m) 
   }
   data <- x$get()
+
+  #solve(A) provides inverse of matrix A
   m <- solve (data) 
-  #solve(A) provides inverse of A
+ 
 
   x$setInverse (m)
   
